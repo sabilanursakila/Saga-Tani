@@ -1,0 +1,283 @@
+/* ===== PENGATURAN DASAR ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --hijau-tua: #0b6b3a;
+    --hijau-gelap: #064e2b;
+    --hijau-muda: #e6f4ea;
+    --hijau-terang: #2e9e44;
+    --teks: #1f2937;
+    --abu: #4b5563;
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    color: var(--teks);
+    background: #ffffff;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ===== TOMBOL ===== */
+.btn {
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 15px;
+    display: inline-block;
+}
+
+.btn-hijau {
+    background: var(--hijau-tua);
+    color: #fff;
+}
+
+.btn-outline {
+    border: 1.5px solid var(--hijau-tua);
+    color: var(--hijau-tua);
+    background: #fff;
+}
+
+.btn-besar {
+    padding: 14px 34px;
+    font-size: 16px;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background: #fff;
+    height: 84px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.navbar-isi {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    height: 64px;
+}
+
+.logo strong {
+    display: block;
+    font-size: 26px;
+    color: var(--hijau-tua);
+    line-height: 1.1;
+}
+
+.logo small {
+    font-size: 11px;
+    color: var(--abu);
+}
+
+.menu {
+    display: flex;
+    gap: 34px;
+}
+
+.menu a {
+    color: var(--teks);
+    font-weight: 500;
+    font-size: 14px;
+    padding-bottom: 6px;
+}
+
+.menu a.aktif {
+    color: var(--hijau-tua);
+    border-bottom: 3px solid var(--hijau-tua);
+}
+
+.tombol-auth {
+    display: flex;
+    gap: 12px;
+}
+
+/* ===== HERO ===== */
+/* Gambar latar ada di kanan, bagian kiri dipudarkan jadi putih
+   supaya teks tetap mudah dibaca */
+.hero {
+    position: relative;
+    min-height: 640px;
+    padding: 50px 0 60px;
+    background:
+        linear-gradient(90deg,
+            #ffffff 0%,
+            rgba(255, 255, 255, 0.95) 35%,
+            rgba(255, 255, 255, 0) 60%),
+        url("../images/hero.png") right center / cover no-repeat;
+}
+
+.hero-teks {
+    max-width: 560px;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--hijau-muda);
+    color: var(--hijau-tua);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.hero-teks h1 {
+    font-size: 62px;
+    color: var(--hijau-gelap);
+    line-height: 1.1;
+    margin-top: 22px;
+}
+
+.hero-teks h2 {
+    font-size: 36px;
+    line-height: 1.25;
+    color: var(--hijau-tua);
+    margin: 6px 0 20px;
+}
+
+.hijau {
+    color: var(--hijau-terang);
+}
+
+.deskripsi {
+    color: var(--abu);
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 480px;
+}
+
+/* ===== TULISAN TANGAN ===== */
+.tulisan-tangan {
+    position: absolute;
+    top: 30px;
+    right: 60px;
+    font-family: "Caveat", cursive;
+    font-size: 32px;
+    line-height: 1.1;
+    color: var(--hijau-tua);
+    text-align: center;
+    transform: rotate(-8deg);
+}
+
+/* ===== FITUR ===== */
+.fitur-singkat {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 34px 0;
+}
+
+.ikon {
+    width: 52px;
+    height: 52px;
+    background: var(--hijau-muda);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.fitur-item h4 {
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.fitur-item p {
+    font-size: 11.5px;
+    color: var(--abu);
+    line-height: 1.5;
+}
+
+/* ===== TOMBOL AKSI ===== */
+.tombol-aksi {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+
+.link-video {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--hijau-tua);
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.ikon-play {
+    width: 34px;
+    height: 34px;
+    border: 2px solid var(--hijau-tua);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+}
+
+/* ===== RESPONSIF (HP & TABLET) ===== */
+@media (max-width: 900px) {
+    .menu {
+        display: none;
+    }
+
+    .tombol-auth .btn-outline {
+        display: none;
+    }
+
+    .hero {
+        background:
+            linear-gradient(180deg,
+                #ffffff 0%,
+                rgba(255, 255, 255, 0.92) 60%,
+                rgba(255, 255, 255, 0.6) 100%),
+            url("../images/hero.png") center bottom / cover no-repeat;
+    }
+
+    .tulisan-tangan {
+        display: none;
+    }
+
+    .hero-teks h1 {
+        font-size: 42px;
+    }
+
+    .hero-teks h2 {
+        font-size: 26px;
+    }
+
+    .fitur-singkat {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tombol-aksi {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
