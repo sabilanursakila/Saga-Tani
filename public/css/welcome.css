@@ -1,4 +1,10 @@
-/* ===== PENGATURAN DASAR ===== */
+/* =========================================
+   PENGATURAN DASAR & EFEK SCROLL
+   ========================================= */
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -24,13 +30,9 @@ a {
     text-decoration: none;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-}
-
-/* ===== TOMBOL ===== */
+/* =========================================
+   KOMPONEN TOMBOL
+   ========================================= */
 .btn {
     padding: 10px 30px;
     border-radius: 30px;
@@ -42,12 +44,11 @@ a {
 .btn-hijau {
     background: var(--hijau-tua);
     color: #fff;
+    transition: 0.3s;
 }
 
-.btn-outline {
-    border: 1.5px solid var(--hijau-tua);
-    color: var(--hijau-tua);
-    background: #fff;
+.btn-hijau:hover {
+    background: var(--hijau-gelap);
 }
 
 .btn-besar {
@@ -55,7 +56,9 @@ a {
     font-size: 16px;
 }
 
-/* ===== NAVBAR ===== */
+/* =========================================
+   NAVBAR (MENU ATAS)
+   ========================================= */
 .navbar {
     background: #fff;
     height: 84px;
@@ -63,12 +66,14 @@ a {
     align-items: center;
     position: relative;
     z-index: 10;
+    width: 100%;
+    padding: 0 40px; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
 }
 
 .navbar-isi {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     width: 100%;
 }
 
@@ -97,6 +102,9 @@ a {
 .menu {
     display: flex;
     gap: 34px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .menu a {
@@ -104,25 +112,22 @@ a {
     font-weight: 500;
     font-size: 14px;
     padding-bottom: 6px;
+    transition: 0.3s;
 }
 
+.menu a:hover,
 .menu a.aktif {
     color: var(--hijau-tua);
     border-bottom: 3px solid var(--hijau-tua);
 }
 
-.tombol-auth {
-    display: flex;
-    gap: 12px;
-}
-
-/* ===== HERO ===== */
-/* Gambar latar ada di kanan, bagian kiri dipudarkan jadi putih
-   supaya teks tetap mudah dibaca */
+/* =========================================
+   HALAMAN UTAMA (BERANDA)
+   ========================================= */
 .hero {
     position: relative;
     min-height: 640px;
-    padding: 50px 0 60px;
+    padding: 50px 40px 60px;
     background:
         linear-gradient(90deg,
             #ffffff 0%,
@@ -170,7 +175,6 @@ a {
     max-width: 480px;
 }
 
-/* ===== TULISAN TANGAN ===== */
 .tulisan-tangan {
     position: absolute;
     top: 30px;
@@ -183,10 +187,9 @@ a {
     transform: rotate(-8deg);
 }
 
-/* ===== FITUR ===== */
 .fitur-singkat {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 14px;
     margin: 34px 0;
 }
@@ -214,41 +217,38 @@ a {
     line-height: 1.5;
 }
 
-/* ===== TOMBOL AKSI ===== */
 .tombol-aksi {
     display: flex;
     align-items: center;
     gap: 26px;
 }
 
-.link-video {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--hijau-tua);
-    font-weight: 600;
-    font-size: 15px;
-}
-
-.ikon-play {
-    width: 34px;
-    height: 34px;
-    border: 2px solid var(--hijau-tua);
-    border-radius: 50%;
+/* =========================================
+   FOOTER (HANYA TEKS COPYRIGHT DI TENGAH)
+   ========================================= */
+.footer {
+    background: var(--hijau-gelap);
+    color: #a8d5ba;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 11px;
+    width: 100%;
 }
 
-/* ===== RESPONSIF (HP & TABLET) ===== */
+/* =========================================
+   RESPONSIVE (HP & TABLET)
+   ========================================= */
 @media (max-width: 900px) {
-    .menu {
-        display: none;
+    .navbar, .hero {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
-    .tombol-auth .btn-outline {
-        display: none;
+    .menu {
+        display: none; 
     }
 
     .hero {
@@ -264,16 +264,11 @@ a {
         display: none;
     }
 
-    .hero-teks h1 {
-        font-size: 42px;
-    }
-
-    .hero-teks h2 {
-        font-size: 26px;
-    }
+    .hero-teks h1 { font-size: 42px; }
+    .hero-teks h2 { font-size: 26px; }
 
     .fitur-singkat {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
 
     .tombol-aksi {

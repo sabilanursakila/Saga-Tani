@@ -1,0 +1,138 @@
+/* =========================================
+   HALAMAN TENTANG KAMI
+   ========================================= */
+
+.hero-tentang {
+    position: relative;
+    padding: 100px 40px 140px; 
+    background: 
+        linear-gradient(90deg, #ffffff 0%, rgba(255,255,255,0.9) 45%, rgba(255,255,255,0) 65%),
+        url("../images/hero-tentang.png") center right / cover no-repeat;
+    min-height: 500px;
+}
+
+.hero-tentang h1 {
+    font-size: 48px;
+    color: var(--hijau-gelap);
+    margin: 20px 0;
+    line-height: 1.2;
+}
+
+.tulisan-tangan.kanan {
+    top: 60px;
+    right: 80px;
+    transform: rotate(-10deg);
+}
+
+.wave-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+}
+
+.visi-misi-section {
+    display: flex;
+    gap: 40px;
+    /* Padding kiri tetap 40px agar sejajar mentok ke kiri */
+    padding: 0 40px 60px 40px; 
+    /* Margin top dibuat lebih negatif (-80px) agar ditarik naik lebih tinggi lagi */
+    margin: -80px 0 0 0; 
+    width: 100%;
+    align-items: flex-start; 
+    position: relative;
+    z-index: 2; 
+}
+
+.hijau-kecil {
+    color: var(--hijau-terang);
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.kiri-teks {
+    flex: 1; 
+    max-width: 400px;
+}
+
+.kiri-teks h2 {
+    font-size: 36px;
+    color: var(--hijau-gelap);
+    margin-bottom: 20px;
+}
+
+.kiri-teks p {
+    color: var(--abu);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.kanan-cards {
+    display: flex;
+    gap: 20px;
+    flex: 2; 
+    padding-right: 40px; 
+}
+
+.card {
+    background: #f4fbf6;
+    border-radius: 16px;
+    padding: 30px 20px;
+    flex: 1;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.ikon-lingkaran {
+    width: 50px;
+    height: 50px;
+    background: #e6f4ea;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.card h3 {
+    font-size: 18px;
+    color: var(--hijau-gelap);
+    margin-bottom: 12px;
+}
+
+.card p {
+    font-size: 13px;
+    color: var(--abu);
+    line-height: 1.6;
+}
+
+/* =========================================
+   RESPONSIVE UNTUK HALAMAN TENTANG (HP/TABLET)
+   ========================================= */
+@media (max-width: 900px) {
+    .hero-tentang, .visi-misi-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .visi-misi-section {
+        flex-direction: column;
+        margin-top: -40px;
+    }
+    
+    .kiri-teks {
+        max-width: 100%;
+    }
+    
+    .kanan-cards {
+        flex-direction: column;
+        width: 100%;
+        padding-right: 0;
+    }
+    
+    .hero-tentang h1 {
+        font-size: 36px;
+    }
+}

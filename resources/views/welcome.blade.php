@@ -5,17 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAGA TANI - Monitoring Pengusiran Hama Tikus</title>
 
-    {{-- Font tulisan tangan untuk "Pertanian Lebih Aman" --}}
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
 </head>
 <body>
 
     {{-- ===== NAVBAR ===== --}}
     <header class="navbar">
-        <div class="container navbar-isi">
-
-            <a href="/" class="logo">
+        <div class="navbar-isi">
+            <a href="{{ url('/') }}" class="logo">
                 <img src="{{ asset('images/logo.png') }}" alt="Logo Saga Tani">
                 <div>
                     <strong>SAGA TANI</strong>
@@ -24,81 +22,85 @@
             </a>
 
             <nav class="menu">
-                <a href="#beranda" class="aktif">Beranda</a>
-                <a href="#tentang">Tentang</a>
-                <a href="#fitur">Fitur</a>
-                <a href="#blog">Blog</a>
-                <a href="#bantuan">Bantuan</a>
+                <a href="{{ url('/') }}" class="nav-link aktif">Beranda</a>
+                <a href="{{ url('/tentang') }}" class="nav-link">Tentang</a>
+                <a href="#fitur" class="nav-link">Fitur</a>
             </nav>
-
-            <div class="tombol-auth">
-                <a href="#" class="btn btn-outline">Masuk</a>
-                <a href="#" class="btn btn-hijau">Daftar</a>
-            </div>
-
         </div>
     </header>
 
     {{-- ===== HERO ===== --}}
     <section class="hero" id="beranda">
-
-        {{-- Tulisan tangan di pojok kanan atas --}}
         <p class="tulisan-tangan">
             Pertanian <br> Lebih Aman <br> Hasil Lebih Baik
         </p>
 
-        <div class="container">
-            <div class="hero-teks">
+        <div class="hero-teks">
+            <span class="badge">🌱 Solusi Pertanian Modern</span>
 
-                <span class="badge">🌱 Solusi Pertanian Modern</span>
+            <h1>SAGA TANI</h1>
+            <h2>
+                Monitoring Pengusiran <br>
+                <span class="hijau">Hama Tikus</span>
+            </h2>
 
-                <h1>SAGA TANI</h1>
-                <h2>
-                    Monitoring Pengusiran <br>
-                    <span class="hijau">Hama Tikus</span>
-                </h2>
+            <p class="deskripsi">
+                Dukung hasil panen yang lebih optimal dengan teknologi
+                monitoring pengusiran hama tikus yang cerdas, efisien,
+                dan mudah digunakan.
+            </p>
 
-                <p class="deskripsi" id="tentang">
-                    Dukung hasil panen yang lebih optimal dengan teknologi
-                    monitoring pengusiran hama tikus yang cerdas, efisien,
-                    dan mudah digunakan.
-                </p>
-
-                {{-- 4 fitur --}}
-                <div class="fitur-singkat" id="fitur">
-                    <div class="fitur-item">
-                        <div class="ikon">🛡️</div>
-                        <h4>Deteksi Real-time</h4>
-                        <p>Pantau aktivitas tikus secara langsung</p>
-                    </div>
-                    <div class="fitur-item">
-                        <div class="ikon">📡</div>
-                        <h4>Pengusiran Otomatis</h4>
-                        <p>Menggunakan perangkat berteknologi tinggi</p>
-                    </div>
-                    <div class="fitur-item">
-                        <div class="ikon">📍</div>
-                        <h4>Pantau dari Mana Saja</h4>
-                        <p>Akses data melalui aplikasi web &amp; mobile</p>
-                    </div>
-                    <div class="fitur-item">
-                        <div class="ikon">🍃</div>
-                        <h4>Meningkatkan Hasil Panen</h4>
-                        <p>Lahan lebih aman, petani lebih sejahtera</p>
-                    </div>
+            <div class="fitur-singkat" id="fitur">
+                <div class="fitur-item">
+                    <div class="ikon">🛡️</div>
+                    <h4>Deteksi Real-time</h4>
+                    <p>Pantau aktivitas tikus secara langsung</p>
                 </div>
-
-                {{-- Tombol --}}
-                <div class="tombol-aksi">
-                    <a href="#" class="btn btn-hijau btn-besar">Mulai Sekarang →</a>
-                    <a href="#" class="link-video">
-                        <span class="ikon-play">▶</span> Tonton Video Pengenalan
-                    </a>
+                <div class="fitur-item">
+                    <div class="ikon">📡</div>
+                    <h4>Pengusiran Otomatis</h4>
+                    <p>Menggunakan perangkat berteknologi tinggi</p>
                 </div>
+                <div class="fitur-item">
+                    <div class="ikon">🍃</div>
+                    <h4>Meningkatkan Hasil Panen</h4>
+                    <p>Lahan lebih aman, petani lebih sejahtera</p>
+                </div>
+            </div>
 
+            <div class="tombol-aksi">
+                <a href="{{ url('/register') }}" class="btn btn-hijau btn-besar">Mulai Sekarang →</a>
             </div>
         </div>
     </section>
 
+    {{-- ===== FOOTER ===== --}}
+    <footer class="footer">
+        <p>© 2026 SAGA TANI. Semua hak dilindungi.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll("section[id], p[id], div[id]");
+            const navLinks = document.querySelectorAll(".menu .nav-link");
+
+            window.addEventListener("scroll", () => {
+                let current = "";
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 100) {
+                        current = section.getAttribute("id");
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove("aktif");
+                    if (link.getAttribute("href").includes(current) && current !== "") {
+                        link.classList.add("aktif");
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
