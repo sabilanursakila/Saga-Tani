@@ -9,6 +9,7 @@
     
     <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
     <link rel="stylesheet" href="{{ asset('css/tentang.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/fitur.css') }}">
 </head>
 <body>
 
@@ -26,7 +27,7 @@
             <nav class="menu">
                 <a href="{{ url('/') }}" class="nav-link">Beranda</a>
                 <a href="{{ url('/tentang') }}" class="nav-link aktif">Tentang</a>
-                <a href="{{ url('/#fitur') }}" class="nav-link">Fitur</a>
+                <a href="{{ url('/fitur') }}" class="nav-link">Fitur</a>
             </nav>
         </div>
     </header>

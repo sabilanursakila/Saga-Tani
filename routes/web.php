@@ -13,5 +13,15 @@ Route::get('/tentang', function () {
     return view('tentang');
 });
 
+// Laluan untuk Halaman Fitur Utama
+Route::get('/fitur', function () {
+    return view('fitur');
+});
+
 // Route untuk mengetes pengiriman data ke Firebase Realtime Database
 Route::get('/tes-firebase', [FirebaseController::class, 'tesKirimData']);
+
+// Laluan untuk Halaman Riwayat Aktivitas (Menggunakan data statis sementara)
+Route::get('/riwayat-aktivitas', function () {
+    return view('riwayat-aktivitas');
+});

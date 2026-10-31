@@ -7,6 +7,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/fitur.css') }}">
 </head>
 <body>
 
@@ -24,7 +25,7 @@
             <nav class="menu">
                 <a href="{{ url('/') }}" class="nav-link aktif">Beranda</a>
                 <a href="{{ url('/tentang') }}" class="nav-link">Tentang</a>
-                <a href="#fitur" class="nav-link">Fitur</a>
+                <a href="{{ url('/fitur') }}" class="nav-link">Fitur</a>
             </nav>
         </div>
     </header>
@@ -69,7 +70,7 @@
             </div>
 
             <div class="tombol-aksi">
-                <a href="{{ url('/register') }}" class="btn btn-hijau btn-besar">Mulai Sekarang →</a>
+                <a href="{{ url('/fitur') }}" class="btn btn-hijau btn-besar">Mulai Sekarang →</a>
             </div>
         </div>
     </section>
@@ -79,28 +80,5 @@
         <p>© 2026 SAGA TANI. Semua hak dilindungi.</p>
     </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const sections = document.querySelectorAll("section[id], p[id], div[id]");
-            const navLinks = document.querySelectorAll(".menu .nav-link");
-
-            window.addEventListener("scroll", () => {
-                let current = "";
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (pageYOffset >= sectionTop - 100) {
-                        current = section.getAttribute("id");
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove("aktif");
-                    if (link.getAttribute("href").includes(current) && current !== "") {
-                        link.classList.add("aktif");
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
