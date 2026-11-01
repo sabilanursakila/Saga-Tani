@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    {{-- ===== NAVBAR ===== --}}
+    {{-- ===== NAVBAR (Menu Beranda & Tentang Dihapus) ===== --}}
     <header class="navbar">
         <div class="navbar-isi">
             <a href="{{ url('/') }}" class="logo">
@@ -24,9 +24,7 @@
             </a>
 
             <nav class="menu">
-                <a href="{{ url('/') }}" class="nav-link">Beranda</a>
-                <a href="{{ url('/tentang') }}" class="nav-link">Tentang</a>
-                <a href="{{ url('/fitur') }}" class="nav-link aktif">Fitur</a>
+                {{-- Kosong --}}
             </nav>
         </div>
     </header>

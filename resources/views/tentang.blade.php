@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    {{-- ===== NAVBAR ===== --}}
+    {{-- ===== NAVBAR (Menu Fitur Dihapus) ===== --}}
     <header class="navbar">
         <div class="navbar-isi">
             <a href="{{ url('/') }}" class="logo">
@@ -27,7 +27,6 @@
             <nav class="menu">
                 <a href="{{ url('/') }}" class="nav-link">Beranda</a>
                 <a href="{{ url('/tentang') }}" class="nav-link aktif">Tentang</a>
-                <a href="{{ url('/fitur') }}" class="nav-link">Fitur</a>
             </nav>
         </div>
     </header>
