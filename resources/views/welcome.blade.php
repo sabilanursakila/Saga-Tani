@@ -73,7 +73,7 @@
             </div>
         </div>
     </section>
-// note bila bilov
+// note bila bilov biyahh
     {{-- ===== FOOTER ===== --}}
     <footer class="footer">
         <p>© 2026 SAGA TANI. Semua hak dilindungi.</p>
