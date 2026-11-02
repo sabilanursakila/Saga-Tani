@@ -175,7 +175,7 @@
         </div>
 
         <div style="text-align: center; margin-top: 30px;">
-            <a href="{{ url('/fitur') }}" class="btn-modal-aktif" style="text-decoration: none; display: inline-block;">← Kembali ke Halaman Fitur</a>
+            <a href="{{ url('/fitur') }}" class="btn-modal-aktif" style="text-decoration: none; display: inline-block;">← Kembali ke Halaman Dashboard</a>
         </div>
     </main>
 
