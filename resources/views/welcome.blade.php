@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    {{-- ===== NAVBAR (Menu Fitur Dihapus) ===== --}}
+    {{-- ===== NAVBAR ===== --}}
     <header class="navbar">
         <div class="navbar-isi">
             <a href="{{ url('/') }}" class="logo">

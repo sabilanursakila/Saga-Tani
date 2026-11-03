@@ -11,7 +11,7 @@
 </head>
 <body style="background: #f8fcf9;">
 
-    {{-- ===== NAVBAR (Menu Navigasi Dihapus) ===== --}}
+    {{-- ===== NAVBAR ===== --}}
     <header class="navbar">
         <div class="navbar-isi">
             <a href="{{ url('/') }}" class="logo">
@@ -21,88 +21,78 @@
                     <small>Masa Depan Pertanian, Bersama</small>
                 </div>
             </a>
-
-            <nav class="menu">
-                {{-- Kosong --}}
-            </nav>
+            <nav class="menu"></nav>
         </div>
     </header>
 
     {{-- ===== KONTEN UTAMA HALAMAN RIWAYAT ===== --}}
-    <main class="fitur-section" style="max-width: 1300px; margin: 40px auto;">
+    <main class="dv-wrap" style="max-width: 1300px;">
         
-        <div class="riwayat-header-box" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 25px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+        <div class="riwayat-header-box">
             <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                <div class="icon-box" style="font-size: 24px;">⏱️</div>
+                <div class="dv-status-icon" style="width: 50px; height: 50px; font-size: 22px;">⏱️</div>
                 <div>
-                    <h1 style="font-size: 24px; color: var(--hijau-gelap); margin-bottom: 4px;">Riwayat Aktivitas</h1>
-                    <p style="font-size: 14px; color: var(--abu);">Lihat riwayat aktivitas pengusiran hama tikus pada lahan Anda secara lengkap.</p>
+                    <h1 style="font-size: 22px; color: var(--dv-hijau-tua); margin-bottom: 4px;">Riwayat Aktivitas</h1>
+                    <p style="font-size: 13.5px; color: var(--dv-abu);">Lihat riwayat aktivitas pengusiran hama tikus pada lahan Anda secara lengkap.</p>
                 </div>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
-                <div style="background: #f8fcf9; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px;">
-                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
-                        <span style="background: var(--hijau-muda); padding: 8px; border-radius: 8px;">📊</span>
-                        <span style="font-size: 13px; color: var(--abu);">Total Aktivitas</span>
+            <div class="dv-status-row" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="dv-card dv-status" style="padding: 16px;">
+                    <div class="dv-status-body">
+                        <small>Total Aktivitas</small>
+                        <strong>128</strong>
+                        <span>↑ 12% dari periode</span>
                     </div>
-                    <div style="font-size: 28px; font-weight: 700; color: var(--hijau-gelap);">128</div>
-                    <small style="font-size: 11px; color: var(--hijau-tua); font-weight: 600;">↑ 12% dari periode sebelumnya</small>
                 </div>
-
-                <div style="background: #f8fcf9; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px;">
-                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
-                        <span style="background: #e6f4ea; padding: 8px; border-radius: 8px;">✅</span>
-                        <span style="font-size: 13px; color: var(--abu);">Pengusiran Berhasil</span>
+                <div class="dv-card dv-status" style="padding: 16px;">
+                    <div class="dv-status-body">
+                        <small>Berhasil</small>
+                        <strong style="color: #16a34a;">116</strong>
+                        <span>↑ 91% dari total</span>
                     </div>
-                    <div style="font-size: 28px; font-weight: 700; color: var(--hijau-gelap);">116</div>
-                    <small style="font-size: 11px; color: var(--hijau-tua); font-weight: 600;">↑ 91% dari total aktivitas</small>
                 </div>
-
-                <div style="background: #f8fcf9; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px;">
-                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
-                        <span style="background: #fef3c7; padding: 8px; border-radius: 8px;">⚠️</span>
-                        <span style="font-size: 13px; color: var(--abu);">Peringatan</span>
+                <div class="dv-card dv-status" style="padding: 16px; background: #fffbeb; border-color: #fde68a;">
+                    <div class="dv-status-body">
+                        <small>Peringatan</small>
+                        <strong style="color: #d97706;">8</strong>
+                        <span>↑ 6% dari total</span>
                     </div>
-                    <div style="font-size: 28px; font-weight: 700; color: var(--hijau-gelap);">8</div>
-                    <small style="font-size: 11px; color: #d97706; font-weight: 600;">↑ 6% dari total aktivitas</small>
                 </div>
-
-                <div style="background: #f8fcf9; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px;">
-                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
-                        <span style="background: #fee2e2; padding: 8px; border-radius: 8px;">❌</span>
-                        <span style="font-size: 13px; color: var(--abu);">Gagal</span>
+                <div class="dv-card dv-status" style="padding: 16px; background: #fef2f2; border-color: #fecaca;">
+                    <div class="dv-status-body">
+                        <small>Gagal</small>
+                        <strong style="color: #dc2626;">4</strong>
+                        <span>↑ 3% dari total</span>
                     </div>
-                    <div style="font-size: 28px; font-weight: 700; color: var(--hijau-gelap);">4</div>
-                    <small style="font-size: 11px; color: #dc2626; font-weight: 600;">↑ 3% dari total aktivitas</small>
                 </div>
             </div>
         </div>
 
-        <div class="fitur-card" style="margin-bottom: 30px;">
+        <div class="dv-card dv-panel" style="margin-bottom: 30px; padding: 24px;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 15px;">
                 <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
                     
                     {{-- TOMBOL PERIODE --}}
                     <div>
-                        <label style="font-size: 11px; color: var(--abu); display: block; margin-bottom: 4px;">Periode</label>
-                        <button type="button" id="btnBukaModalPeriode" style="padding: 8px 14px; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 13px; background: #fff; cursor: pointer; display: flex; align-items: center; gap: 10px; color: var(--teks); font-weight: 500;">
+                        <label style="font-size: 11px; color: var(--dv-abu); display: block; margin-bottom: 4px;">Periode</label>
+                        <button type="button" id="btnBukaModalPeriode" style="padding: 8px 14px; border-radius: 8px; border: 1px solid var(--dv-garis); font-size: 13px; background: #fff; cursor: pointer; display: flex; align-items: center; gap: 10px; color: var(--dv-teks); font-weight: 500;">
                             <span id="labelPeriodeAktif">01 Okt 2026 - 31 Okt 2026</span>
                             <span>▼</span>
                         </button>
                     </div>
 
                     <div>
-                        <label style="font-size: 11px; color: var(--abu); display: block; margin-bottom: 4px;">Perangkat</label>
-                        <select style="padding: 8px 12px; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 13px; outline: none; background: #fff;">
+                        <label style="font-size: 11px; color: var(--dv-abu); display: block; margin-bottom: 4px;">Perangkat</label>
+                        <select style="padding: 8px 12px; border-radius: 8px; border: 1px solid var(--dv-garis); font-size: 13px; outline: none; background: #fff; font-family: inherit;">
                             <option>Semua Perangkat</option>
                         </select>
                     </div>
                 </div>
 
-                {{-- KOLOM PENCARIAN & TOMBOL TERAPKAN FILTER / UNDUH --}}
-                <div style="display: flex; gap: 10px; align-items: center;">
-                    <input type="text" id="inputPencarian" placeholder="Cari suara, perangkat, lokasi..." style="padding: 8px 14px; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 13px; outline: none; width: 240px;">
+                {{-- PENCARIAN & FILTER --}}
+                <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                    <input type="text" id="inputPencarian" placeholder="Cari suara, perangkat, lokasi..." style="padding: 8px 14px; border-radius: 8px; border: 1px solid var(--dv-garis); font-size: 13px; outline: none; width: 240px; font-family: inherit;">
                     <button type="button" id="btnTerapkanFilter" class="btn-modal-aktif" style="padding: 8px 16px; font-size: 13px; cursor: pointer;">Terapkan Filter</button>
                     <button type="button" id="btnUnduhLaporan" class="btn-modal-tutup" style="padding: 8px 16px; font-size: 13px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">📥 Unduh Laporan</button>
                 </div>
@@ -146,7 +136,7 @@
                         <td>🤖 Otomatis</td>
                         <td>🔊 Suara Ular</td>
                         <td>7 menit</td>
-                        <td><span class="badge-status" style="background:#fef3c7; color:#d97706;">⚠️ Peringatan</span></td>
+                        <td><span class="badge-status warning">⚠️ Peringatan</span></td>
                     </tr>
                     <tr data-keyword="28 okt 2026 r-883 blok c terjadwal suara rubah 8 menit berhasil">
                         <td>28 Okt 2026, 21:30</td>
@@ -158,18 +148,18 @@
                         <td><span class="badge-status success">Berhasil</span></td>
                     </tr>
                     <tr data-keyword="27 okt 2026 r-882 sawah tengah otomatis suara anjing 10 menit gagal">
-                        <td>27 okt 2026, 17:45</td>
+                        <td>27 Okt 2026, 17:45</td>
                         <td>R-882</td>
                         <td>📍 Sawah Tengah</td>
                         <td>🤖 Otomatis</td>
                         <td>🔊 Suara Anjing</td>
                         <td>10 menit</td>
-                        <td><span class="badge-status" style="background:#fee2e2; color:#dc2626;">❌ Gagal</span></td>
+                        <td><span class="badge-status danger">❌ Gagal</span></td>
                     </tr>
                 </tbody>
             </table>
 
-            <div id="pesanKosong" style="display: none; text-align: center; padding: 25px; color: var(--abu); font-size: 13px;">
+            <div id="pesanKosong" style="display: none; text-align: center; padding: 25px; color: var(--dv-abu); font-size: 13px;">
                 Tidak ada data riwayat aktivitas yang sesuai dengan kata kunci pencarian.
             </div>
         </div>
@@ -179,7 +169,7 @@
         </div>
     </main>
 
-    {{-- ===== POP-UP MODAL PEMILIH TANGGAL ===== --}}
+    {{-- ===== MODAL PEMILIH TANGGAL ===== --}}
     <div id="modalPeriode" class="modal-overlay">
         <div class="modal-content" style="max-width: 420px; text-align: left;">
             <h3>Pilih Periode Tanggal</h3>
@@ -187,16 +177,16 @@
             
             <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px;">
                 <div>
-                    <label style="display: block; font-size: 12px; font-weight: 600; color: var(--teks); margin-bottom: 6px;">Tanggal Mulai:</label>
-                    <input type="date" id="inputTanggalMulai" value="2026-10-01" style="width: 100%; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 14px; outline: none;">
+                    <label style="display: block; font-size: 12px; font-weight: 600; color: var(--dv-teks); margin-bottom: 6px;">Tanggal Mulai:</label>
+                    <input type="date" id="inputTanggalMulai" value="2026-10-01" class="input-datetime">
                 </div>
                 <div>
-                    <label style="display: block; font-size: 12px; font-weight: 600; color: var(--teks); margin-bottom: 6px;">Tanggal Selesai:</label>
-                    <input type="date" id="inputTanggalSelesai" value="2026-10-31" style="width: 100%; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 14px; outline: none;">
+                    <label style="display: block; font-size: 12px; font-weight: 600; color: var(--dv-teks); margin-bottom: 6px;">Tanggal Selesai:</label>
+                    <input type="date" id="inputTanggalSelesai" value="2026-10-31" class="input-datetime">
                 </div>
             </div>
 
-            <div class="modal-actions" style="display: flex; justify-content: flex-end; gap: 10px;">
+            <div class="modal-actions">
                 <button type="button" id="btnSimpanPeriode" class="btn-modal-aktif">Terapkan</button>
                 <button type="button" id="btnTutupPeriode" class="btn-modal-tutup">Batal</button>
             </div>
@@ -281,11 +271,9 @@
             const rows = document.querySelectorAll('.activity-table tr');
 
             for (let i = 0; i < rows.length; i++) {
-                // Hanya unduh baris yang sedang tampil (tidak tersembunyi karena filter)
                 if (rows[i].style.display !== 'none') {
                     let row = [], cols = rows[i].querySelectorAll('th, td');
                     for (let j = 0; j < cols.length; j++) {
-                        // Bersihkan teks dari emoji atau spasi berlebih
                         let text = cols[j].innerText.replace(/(\r\n|\n|\r)/gm, "").trim();
                         row.push('"' + text + '"');
                     }
@@ -298,7 +286,6 @@
                 return;
             }
 
-            // Buat file CSV virtual dan download otomatis
             let csvFile = new Blob([csv.join('\n')], { type: 'text/csv;charset=utf-8;' });
             let downloadLink = document.createElement('a');
             downloadLink.download = 'Laporan_Riwayat_Aktivitas_SagaTani.csv';
