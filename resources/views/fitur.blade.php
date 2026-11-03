@@ -48,6 +48,10 @@
                     <div>
                         <h3>Mode Operasi</h3>
                         <p>Atur cara kerja perangkat sesuai kebutuhan lahan Anda</p>
+                        <p class="text-sm font-medium text-green-600 mt-1">
+            Status Saat Ini: <span id="mode-operasi-text">Memuat...</span>
+        </p>
+    </div>
                     </div>
                 </div>
                 <div class="mode-operasi-grid">
@@ -426,5 +430,37 @@
             if (e.target === modalPerangkat) modalPerangkat.style.display = 'none';
         });
     </script>
+    <!-- Firebase SDK dari CDN -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+  // 1. Konfigurasi dengan URL yang sudah kamu salin
+  const firebaseConfig = {
+    databaseURL: "https://sagatani-7f2c3-default-rtdb.asia-southeast1.firebasedatabase.app"
+  };
+
+  // 2. Inisialisasi Firebase Database
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  // 3. Pantau Mode Operasi (Otomatis/Terjadwal/Manual)
+  const modeRef = ref(db, 'kontrol_sistem/mode_operasi');
+  onValue(modeRef, (snapshot) => {
+    const mode = snapshot.val();
+    const modeElem = document.getElementById('mode-operasi-text');
+    if (modeElem) modeElem.innerText = mode;
+  });
+
+  // 4. Pantau Status & Baterai Perangkat R-881
+  const r881Ref = ref(db, 'perangkat/R-881');
+  onValue(r881Ref, (snapshot) => {
+    const data = snapshot.val();
+    if (data) {
+      const bateraiElem = document.getElementById('baterai-r881');
+      if (bateraiElem) bateraiElem.innerText = data.baterai + "%";
+    }
+  });
+</script>
 </body>
 </html>
