@@ -74,25 +74,25 @@
                     <div class="icon-box">📱</div>
                     <div>
                         <h3>Detail Perangkat</h3>
-                        <p>Kelola berbagai jenis suara pengusir hama yang tersedia di perangkat.</p>
+                        <p>Kelola berbagai komponen yang tersedia di perangkat.</p>
                     </div>
                     <button type="button" id="btnLihatPerangkat" class="link-hijau-tebal" style="background:none; border:none; cursor:pointer; padding:0;">Lihat semua perangkat →</button>
                 </div>
                 <div class="stats-row">
                     <div class="stat-item">
                         <span class="stat-icon">📡</span>
-                        <span class="stat-num" id="statTotal">3</span>
-                        <span class="stat-label">Total Perangkat</span>
+                        <span class="stat-num" id="statTotal">Siaga</span>
+                        <span class="stat-label">Status Sensor</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-icon">🟢</span>
-                        <span class="stat-num" id="statAktif">2</span>
-                        <span class="stat-label">Perangkat Aktif</span>
+                        <span class="stat-icon">🔊</span>
+                        <span class="stat-num" id="statAktif">Tidak Ada</span>
+                        <span class="stat-label">Suara Sedang Diputar</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-icon">🔴</span>
+                        <span class="stat-icon">🛰️</span>
                         <span class="stat-num" id="statOffline">1</span>
-                        <span class="stat-label">Perangkat Offline</span>
+                        <span class="stat-label">Perangkat</span>
                     </div>
                 </div>
             </div>
